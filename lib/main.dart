@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() => runApp(
-      MaterialApp(home: MyApp()),
-    );
+void main() => runApp(MaterialApp(home: MyApp()));
 
 class MyApp extends StatelessWidget {
   final fontsList = <String>[];
@@ -15,7 +13,7 @@ class MyApp extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            // replace either with local fonts or GoogleFonts
+            // 'fonts' or 'localFonts'
             for (final it in List.generate(12, (_) => 0))
               fontsList.addAll(fonts.split('\n'));
 
@@ -25,7 +23,6 @@ class MyApp extends StatelessWidget {
           },
           child: Text('Next Page'),
         ),
-        // child: FontsPage(fontsList: fontsList),
       ),
     );
   }
@@ -52,6 +49,7 @@ class FontsPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 isEven ? 'přížíéščé č' : '订单, asdf',
+                // if using 'localFonts' uncomment this:
                 // style: TextStyle(
                 //   fontFamily: fontsList[index],
                 //   fontSize: 58.0,
@@ -154,4 +152,3 @@ Barlow
 Anton
 Abel
 """;
-
